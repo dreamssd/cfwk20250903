@@ -80,7 +80,7 @@ jobs:
           wget -q -O "$TARGET_FILE" "$DOWNLOAD_URL"
           log "解压 $TARGET_FILE..."
           unzip -o  "$TARGET_FILE"
-          mv worker.js origin.js 2>/dev/null || true
+          mv _worker.js origin.js 2>/dev/null || true
           rm "$TARGET_FILE"
           echo "$TAG_NAME" > version.txt
           log "更新完成，新版本: $TAG_NAME"

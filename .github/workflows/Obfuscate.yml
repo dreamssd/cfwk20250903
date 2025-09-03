@@ -69,7 +69,7 @@ jobs:
           log "下载 $TARGET_FILE..."
           wget -q -O "$TARGET_FILE" "$DOWNLOAD_URL"
           log "解压 $TARGET_FILE..."
-          unzip -o origin.js "$TARGET_FILE"
+          unzip -o  "$TARGET_FILE"
           mv worker.js origin.js 2>/dev/null || true
           rm "$TARGET_FILE"
           echo "$TAG_NAME" > version.txt

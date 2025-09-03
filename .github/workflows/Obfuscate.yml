@@ -20,8 +20,18 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: 检出仓库
+      - name: Check out the code
         uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
+
+      - name: Install dependencies
+        run: |
+          npm install -g javascript-obfuscator
+
 
       - name: 设置环境
         run: |
